@@ -5,7 +5,7 @@ const Product = mongoose.model('Product');
 
 exports.get = (req, res, next) => {
     Product
-        .find({active: true}, 'title preice slug')        
+        .find({active: true}, 'title price slug')        
         .then( data => {
             res.status(200).send({data});
         }).catch(e => {
@@ -13,6 +13,44 @@ exports.get = (req, res, next) => {
         });
 }
 
+exports.getBySlug = (req, res, next) => {
+    Product
+        .findOne({
+            slug: req.params.slug,
+            active: true
+        }, 
+            'title description price slug tags')        
+        .then( data => {
+            res.status(200).send({data});
+        }).catch(e => {
+            res.status(400).send({e});
+        });
+}
+
+exports.getById = (req, res, next) => {
+    Product
+        .findById(req.params.id)        
+        .then( data => {
+            res.status(200).send({data});
+        }).catch(e => {
+            res.status(400).send({e});
+        });
+}
+
+
+exports.getByTag = (req, res, next) => {
+    Product
+        .find({
+            tags: req.params.tag,
+            active: true
+        }, 
+            'title description price slug tags')        
+        .then( data => {
+            res.status(200).send({data});
+        }).catch(e => {
+            res.status(400).send({e});
+        });
+}
 
 exports.post = ('/', (req, res, next) =>{
     var product = new Product(req.body);
