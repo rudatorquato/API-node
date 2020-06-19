@@ -12,6 +12,10 @@ const router = express.Router();
 mongoose.connect('mongodb+srv://teste:123@cluster0-a4qwc.azure.mongodb.net/api?retryWrites=true&w=majority', 
 { useNewUrlParser: true, useUnifiedTopology: true});
 
+//Carrega os models
+const Product = require('./models/product');
+
+
 // Carrega rotas
 const indexRoute = require ('./routes/index-route');
 const productRoute = require('./routes/product-route');
