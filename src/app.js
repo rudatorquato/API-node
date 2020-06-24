@@ -14,6 +14,8 @@ mongoose.connect('mongodb+srv://ruda:ruda@cluster0-wcbnr.azure.mongodb.net/apire
 
 //Carrega os models
 const Product = require('./models/product');
+const Custumer = require('./models/custumer');
+const Order = require('./models/order');
 
 
 // Carrega rotas
