@@ -9,7 +9,7 @@ const app = express();
 const router = express.Router();
 
 
-mongoose.connect('mongodb+srv://teste:123@cluster0-a4qwc.azure.mongodb.net/api?retryWrites=true&w=majority', 
+mongoose.connect('mongodb+srv://ruda:ruda@cluster0-wcbnr.azure.mongodb.net/apiretryWrites=true&w=majority', //mongo atlas
 { useNewUrlParser: true, useUnifiedTopology: true});
 
 //Carrega os models
