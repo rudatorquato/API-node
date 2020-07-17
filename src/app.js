@@ -14,14 +14,15 @@ mongoose.connect('mongodb+srv://ruda:ruda@cluster0-wcbnr.azure.mongodb.net/apire
 
 //Carrega os models
 const Product = require('./models/product');
-const Custumer = require('./models/custumer');
+const Custumer = require('./models/customer');
 const Order = require('./models/order');
 
 
 // Carrega rotas
 const indexRoute = require ('./routes/index-route');
 const productRoute = require('./routes/product-route');
-const custumerRoute = require('./routes/custumer-route');
+const custumerRoute = require('./routes/customer-route');
+const orderRoute = require('./routes/order-route');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended:false}));
@@ -29,5 +30,6 @@ app.use(bodyParser.urlencoded({ extended:false}));
 app.use('/', indexRoute);
 app.use('/products', productRoute);
 app.use('/custumers', custumerRoute);
+app.use('/orders', orderRoute);
 
 module.exports = app;
