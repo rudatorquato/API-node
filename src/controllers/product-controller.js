@@ -1,7 +1,7 @@
 'use strict';
 
-const mongoose = require('mongoose');
-const Product = mongoose.model('Product');
+//const mongoose = require('mongoose');
+//const Product = mongoose.model('Product');
 const ValidationContract = require('../validators/fluent-validator');
 const repostory = require('../repositories/product-repository');
 
