@@ -2,14 +2,14 @@
 
 const express = require('express');
 const bodyParser = require('body-parser');
-
 const mongoose = require('mongoose');
+const config = require('./config');
 
 const app = express();
 const router = express.Router();
 
 
-mongoose.connect('mongodb+srv://ruda:ruda@cluster0-wcbnr.azure.mongodb.net/apiretryWrites=true&w=majority', //mongo atlas
+mongoose.connect(config.connectionString, //mongo atlas
 { useNewUrlParser: true, useUnifiedTopology: true});
 
 //Carrega os models
